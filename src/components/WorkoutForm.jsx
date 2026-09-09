@@ -7,6 +7,7 @@ function WorkoutForm(props) {
 
 
   const submitHandler = (event) => {
+    // prevent browser reload upon submit (default behavior)
     event.preventDefault();
 
     // collecting entered data
@@ -19,6 +20,7 @@ function WorkoutForm(props) {
     // call parent: New Workout
     props.onSaveWorkoutData(workoutData);
 
+    // reset input state variables.
     setEnteredTitle("");
     setEnteredDuration("");
     setEnteredType("Cardio");

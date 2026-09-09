@@ -1,6 +1,7 @@
 import { useState } from "react";
 import WorkoutItem from "../components/WorkoutItem";
 import WorkoutFilter from "./WorkoutFilter.jsx";
+import WorkoutSummary from "./WorkoutSummary.jsx";
 
 function WorkoutList(props) {
   const [filterType, setFilterType] = useState("All");
@@ -20,7 +21,7 @@ function WorkoutList(props) {
     <div className="card">
       <h2>Daily Log</h2>
       <WorkoutFilter onChangeFilter={filterChangeHandler}/>
-
+      <WorkoutSummary filteredWorkouts={filteredWorkouts}/>
       {/*  Workout Items  */}
       {
         filteredWorkouts.length === 0 ? (<p>No workouts found</p>) :

@@ -6,7 +6,7 @@ function NewWorkout(props) {
   const saveWorkoutDataHandler = (enteredWorkoutData) => {
     const workoutData = {
       ...enteredWorkoutData,
-      // add id
+      // add unique id
       id: Math.random().toString()
     };
     props.onAddWorkout(workoutData);

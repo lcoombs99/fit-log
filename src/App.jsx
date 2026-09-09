@@ -10,10 +10,12 @@ const INITIAL_WORKOUTS = [
 ];
 
 function App() {
+  // STATE HOOKS
   const [workouts, setWorkouts] = useState(INITIAL_WORKOUTS);
 
+  // new workout PREPENDS existing -- [workout, ...prevWorkouts]
   const addWorkoutHandler = (workout) => {
-    // new workout PREPENDS existing --
+    // execute a functional update using setWorkouts hoook
     setWorkouts((prevWorkouts) => [workout, ...prevWorkouts]);
   };
 
