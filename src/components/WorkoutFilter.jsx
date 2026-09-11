@@ -1,4 +1,5 @@
 function WorkoutFilter(props) {
+  // props: onChangeFIlter, selected
   const dropdownChangeHandler = (event) => {
     props.onChangeFilter(event.target.value);
   };
@@ -6,8 +7,7 @@ function WorkoutFilter(props) {
   return (
     <div className="form-control">
       <label>Filter by Type</label>
-      <select
-        onChange={dropdownChangeHandler} value={props.selected}>
+      <select onChange={dropdownChangeHandler} value={props.selected}>
         <option value="All">All</option>
         <option value="Cardio">Cardio</option>
         <option value="Strength">Strength</option>

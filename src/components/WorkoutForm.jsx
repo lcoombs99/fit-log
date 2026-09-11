@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function WorkoutForm(props) {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredDuration, setEnteredDuration] = useState("");
-  const [enteredType, setEnteredType] = useState("Cardio");
+  // props: onSaveWorkoutData
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredDuration, setEnteredDuration] = useState('');
+  const [enteredType, setEnteredType] = useState('Cardio');
 
 
   const submitHandler = (event) => {
@@ -17,13 +18,13 @@ function WorkoutForm(props) {
       type: enteredType
     };
 
-    // call parent: New Workout
+    // call parent with new workout data
     props.onSaveWorkoutData(workoutData);
 
-    // reset input state variables.
-    setEnteredTitle("");
-    setEnteredDuration("");
-    setEnteredType("Cardio");
+    // reset input state variables after submission
+    setEnteredTitle('');
+    setEnteredDuration('');
+    setEnteredType('Cardio');
   };
 
   return (

@@ -1,8 +1,9 @@
 function WorkoutItem(props) {
+  // props: title, duration, type
   return (
     <div className="card">
       <h3>{props.title}</h3>
-      <p>Duration: {props.duration}</p>
+      <p>Duration: {props.duration} mins</p>
       <p>Type: {props.type}</p>
     </div>
   );

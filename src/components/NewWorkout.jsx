@@ -1,20 +1,20 @@
-import WorkoutForm from "./WorkoutForm";
+import WorkoutForm from './WorkoutForm';
 
 // Wrapper for WorkoutForm
 function NewWorkout(props) {
-  // process workout data, add id, add to props
+  // props: onAddWorkout
   const saveWorkoutDataHandler = (enteredWorkoutData) => {
     const workoutData = {
       ...enteredWorkoutData,
-      // add unique id
-      id: Math.random().toString()
+      id: Math.random().toString() // add unique id to workout
     };
+    // callback function to pass data back up the chain
     props.onAddWorkout(workoutData);
   };
 
   return (
     <div>
-      <WorkoutForm onSaveWorkoutData={saveWorkoutDataHandler} />
+      <WorkoutForm onSaveWorkoutData={saveWorkoutDataHandler}/>
     </div>
   );
 }
